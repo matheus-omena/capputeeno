@@ -46,14 +46,14 @@ export function FilterByType() {
         TODOS OS PRODUTOS
       </FilterItem>
       <FilterItem
-        selected={type === FilterType.SHIRT}
-        onClick={() => handleChangeType(FilterType.SHIRT)}
+        selected={type === FilterType.SHIRTS}
+        onClick={() => handleChangeType(FilterType.SHIRTS)}
       >
         CAMISETAS
       </FilterItem>
       <FilterItem
-        selected={type === FilterType.MUG}
-        onClick={() => handleChangeType(FilterType.MUG)}
+        selected={type === FilterType.MUGS}
+        onClick={() => handleChangeType(FilterType.MUGS)}
       >
         CANECAS
       </FilterItem>
