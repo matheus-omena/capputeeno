@@ -15,7 +15,6 @@ const ProductsContainer = styled.div`
 
 export function ProductsList() {
   const { data } = useProducts();
-  console.log(data);
 
   return (
     <ProductsContainer>

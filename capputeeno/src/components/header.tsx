@@ -3,7 +3,7 @@
 import styled from "styled-components";
 
 import { Saira_Stencil_One } from "next/font/google";
-import { PrimaryInput, PrimaryInputSearchIcon } from "./primary-input";
+import { PrimaryInputSearchIcon } from "./primary-input";
 import { CartControl } from "./icons/cart-control";
 import useFilter from "@/hooks/useFilter";
 
@@ -16,7 +16,7 @@ const TagHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 160px;
+  padding: 12px 24px;
   height: 80px;
   background-color: white;
 
@@ -24,15 +24,27 @@ const TagHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 12px;
+  }
+
+  @media (min-width: ${(props) => props.theme.desktopBreakpoint}) {
+    padding: 20px 160px;
+
+    > div {
+      gap: 24px;
+    }
   }
 `;
 
 const Logo = styled.a`
   color: var(--logo-color);
   font-weight: 400;
-  font-size: 40px;
+  font-size: 20px;
   line-height: 150%;
+
+  @media (min-width: ${(props) => props.theme.desktopBreakpoint}) {
+    font-size: 40px;
+  }
 `;
 
 export function Header() {

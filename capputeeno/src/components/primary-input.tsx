@@ -4,29 +4,43 @@ import { InputHTMLAttributes } from "react";
 
 export const InputContainer = styled.div`
   position: relative;
-  width: 352px;
+  width: 200px;
 
   svg {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    display: none;
+  }
+
+  @media (min-width: ${(props) => props.theme.desktopBreakpoint}) {
+    width: 352px;
+
+    svg {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 `;
 
 export const PrimaryInput = styled.input`
-  width: 352px;
+  width: 100%;
   border-radius: 8px;
   border: none;
-  padding: 10px 16px;
+  padding: 10px 10px;
 
   background-color: var(--bg-secondary);
   color: var(--text-dark);
 
   font-family: inherit;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 12px;
+  line-height: 20px;
+
+  @media (min-width: ${(props) => props.theme.desktopBreakpoint}) {
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 22px;
+  }
 `;
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
