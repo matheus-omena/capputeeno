@@ -6,9 +6,12 @@
   --delete-color: #de3838;
   --orange-low: #ffa585;
   --dark: #41414d;
+  --shapes-light: #f5f5fa;
   --shapes-dark: #09090a;
   --shapes: #dce2e6;
   --bg-primary: #dedede;
+  --text-color: #617480;
+  --brand-blue: #115d8c;
 }
 
 * {
