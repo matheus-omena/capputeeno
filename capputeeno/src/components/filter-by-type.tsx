@@ -10,15 +10,19 @@ const FilterList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   list-style: none;
+
+  @media (min-width: ${(props) => props.theme.desktopBreakpoint}) {
+    gap: 40px;
+  }
 `;
 
 const FilterItem = styled.li<FilterItemProps>`
   font-family: inherit;
   font-weight: ${(props) => (props.selected ? "600" : "400")};
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 12px;
+  line-height: 18px;
   cursor: pointer;
 
   text-align: center;
@@ -28,6 +32,11 @@ const FilterItem = styled.li<FilterItemProps>`
 
   border-bottom: ${(props) =>
     props.selected ? "4px solid var(--orange-low)" : ""};
+
+  @media (min-width: ${(props) => props.theme.desktopBreakpoint}) {
+    font-size: 16px;
+    line-height: 22px;
+  }
 `;
 
 export function FilterByType() {
