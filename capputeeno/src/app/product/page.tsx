@@ -5,6 +5,7 @@ import { DefaultPageLayout } from "@/components/default-page-layout";
 import { GoBackButton } from "@/components/go-back-button";
 import { BagIcon } from "@/components/icons/bag-icon";
 import { useProduct } from "@/hooks/useProduct";
+import { formatCategory } from "@/utils/format-category";
 import { formatPrice } from "@/utils/format-price";
 import styled from "styled-components";
 
@@ -125,7 +126,7 @@ export default function Product({
           <img src={data?.image_url} alt={data?.name} />
           <div>
             <ProductInfo>
-              <span>{data?.category}</span>
+              <span>{formatCategory(data?.category ?? "")}</span>
               <h2>{data?.name}</h2>
               <span>{formatPrice(data?.price_in_cents ?? 0)}</span>
               <p>
