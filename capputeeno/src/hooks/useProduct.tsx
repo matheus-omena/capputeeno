@@ -25,6 +25,7 @@ export function useProduct(id: string) {
     queryFn: () => fetcher(id),
     queryKey: ["product", id],
     enabled: !!id,
+    staleTime: 1000 * 60 * 5, // tempo em que o dado é válido
   });
 
   return { data: data?.data?.data?.Product };

@@ -20,6 +20,7 @@ export function useProducts() {
   const { data } = useQuery({
     queryFn: () => fetcher(query),
     queryKey: ["products", type, priority],
+    staleTime: 1000 * 60 * 1, // tempo em que o dado é válido
   });
 
   const products = data?.data?.data?.allProducts;
