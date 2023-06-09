@@ -102,6 +102,7 @@ const Button = styled.button`
   background-color: var(--brand-blue);
   border: 0;
   border-radius: 4px;
+  cursor: pointer;
 
   color: var(--shapes-light);
   font-family: inherit;
@@ -116,6 +117,33 @@ export default function Product({
   searchParams: { id: string };
 }) {
   const { data } = useProduct(searchParams.id);
+
+  const handleAddToCart = () => {
+    let cartItems = localStorage.getItem("cart-items");
+    if (cartItems) {
+      let cartItemsArray = JSON.parse(cartItems);
+
+      let existentProductIndex = cartItemsArray.findIndex(
+        (item: { id: string }) => item.id === searchParams.id
+      );
+
+      if (existentProductIndex != -1)
+        cartItemsArray[existentProductIndex].quantity += 1;
+      else cartItemsArray.push({ ...data, quantity: 1, id: searchParams.id });
+
+      localStorage.setItem("cart-items", JSON.stringify(cartItemsArray));
+    } else {
+      const newCart = [
+        {
+          ...data,
+          quantity: 1,
+          id: searchParams.id,
+        },
+      ];
+
+      localStorage.setItem("cart-items", JSON.stringify(newCart));
+    }
+  };
 
   return (
     <DefaultPageLayout>
@@ -139,7 +167,7 @@ export default function Product({
               </div>
             </ProductInfo>
 
-            <Button>
+            <Button onClick={handleAddToCart}>
               <BagIcon />
               <span>ADICIONAR AO CARRINHO</span>
             </Button>
