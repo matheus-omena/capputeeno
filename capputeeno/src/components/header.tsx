@@ -41,6 +41,8 @@ const Logo = styled.a`
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
+  cursor: pointer;
+  text-decoration: none;
 
   @media (min-width: ${(props) => props.theme.tabletBreakpoint}) {
     font-size: 24px;
@@ -56,7 +58,9 @@ export function Header() {
 
   return (
     <TagHeader>
-      <Logo className={sairaStencilOne.className}>capputeeno</Logo>
+      <Logo className={sairaStencilOne.className} href="/">
+        capputeeno
+      </Logo>
       <div>
         <PrimaryInputSearchIcon
           value={search}
