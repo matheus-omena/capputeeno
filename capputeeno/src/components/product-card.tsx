@@ -26,6 +26,7 @@ const Card = styled.div`
   img {
     width: 256px;
     height: 300px;
+    object-fit: cover;
   }
 
   h3 {
